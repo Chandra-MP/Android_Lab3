@@ -18,12 +18,18 @@ public class MainActivity extends AppCompatActivity {
         Button button=findViewById(R.id.button);
 
         EditText editText = findViewById(R.id.editTextText2);
+        EditText editEmail = findViewById(R.id.editTextTextEmailAddress);
+        EditText editPhone = findViewById(R.id.editTextPhone);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = editText.getText().toString();
+                String email = editEmail.getText().toString();
+                String phone = editPhone.getText().toString();
                 Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
                 intent.putExtra("name",name);
+                intent.putExtra("email", email);
+                intent.putExtra("phone", phone);
                 startActivity(intent);
             }
         });
